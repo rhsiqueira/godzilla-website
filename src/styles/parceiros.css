@@ -1,0 +1,65 @@
+/* ---------- Logos dos clientes ---------- */
+
+.clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.clients__item {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 4 / 3;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease), box-shadow 0.3s;
+}
+
+.clients__item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.clients__item img {
+    inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 6rem;
+    object-fit: contain;
+}
+
+/* ---------- Faixa de chamada ---------- */
+
+.cta-band {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 6vw, 4rem);
+    border-radius: var(--radius-lg);
+    background: radial-gradient(36rem 20rem at 100% 0%, rgb(165 242 162 / 0.18), transparent 70%),
+        var(--green-800);
+    color: rgb(255 255 255 / 0.85);
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.cta-band h2 {
+    max-width: 24ch;
+    font-size: var(--text-2xl);
+    color: #fff;
+}
+
+.cta-band p {
+    max-width: 62ch;
+    font-size: var(--text-lg);
+}
+
+.cta-band__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-block-start: 0.5rem;
+}
