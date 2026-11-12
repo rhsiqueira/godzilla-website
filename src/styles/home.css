@@ -1,119 +1,152 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* ---------- Hero ---------- */
 
+.hero {
+    padding-block: clamp(2.5rem, 7vw, 5.5rem);
+    background: radial-gradient(50rem 30rem at 100% 0%, var(--green-100), transparent 70%);
+    /* os elementos decorativos da imagem não devem gerar rolagem horizontal */
+    overflow-x: clip;
+}
 
-.oil-impact {
-    display: flex;
-    justify-content: center;
+.hero__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
     align-items: center;
-    flex-direction: row;
-    gap: 270px;
+    gap: clamp(2.5rem, 6vw, 5rem);
 }
 
-.container-paragraph-oil-impact {
-    width: 423px;
+.hero__content {
+    display: grid;
+    gap: 1.25rem;
+    justify-items: start;
 }
 
-.conscious-disposal {
+.hero__source {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+}
+
+.hero__source a {
+    color: var(--green-600);
+    font-weight: 600;
+}
+
+.hero__actions {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 170px;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-block-start: 0.5rem;
 }
 
-.container-disposal {
+.hero__media {
+    position: relative;
+    justify-self: center;
+    inline-size: min(100%, 26rem);
+    /* espaço para o cartão de destaque que ultrapassa a imagem */
+    padding-block-end: 2.5rem;
+}
+
+.hero__media::before {
+    content: '';
+    position: absolute;
+    inset: -1.25rem -1.25rem 1.25rem 1.25rem;
+    z-index: -1;
+    border-radius: var(--radius-lg);
+    background: var(--mint);
+    opacity: 0.55;
+}
+
+.hero__media img {
+    inline-size: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+.hero__stat {
+    position: absolute;
+    inset-block-end: 0;
+    inset-inline-start: -0.75rem;
+    display: grid;
+    padding: 0.9rem 1.2rem;
+    border-radius: var(--radius);
+    background: var(--green-800);
+    color: rgb(255 255 255 / 0.85);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+    box-shadow: var(--shadow);
+}
+
+.hero__stat strong {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    color: var(--mint);
+}
+
+/* ---------- Descarte consciente ---------- */
+
+.disposal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    align-items: center;
+    gap: clamp(2rem, 5vw, 4rem);
+    margin-block-start: clamp(2rem, 5vw, 3.5rem);
+}
+
+.steps {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.steps__item {
     display: flex;
-    justify-content: center;
     align-items: center;
-    margin-bottom: 12px;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
 }
 
-.descarte-video {
-    width: 100%;
-    height: 300px;
+.steps__number {
+    flex: none;
+    display: grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--green-800);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
 }
 
-.container-step  h3, p {
-    font-family: 'Inter', sans-serif;
+.steps__label {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold-700);
 }
 
-.container-step h3 {
- color: #A68F1F;
- font-size: 24px;
+.steps__item p {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--green-800);
 }
 
-.style-step {
-    margin-bottom: 6px;
+.disposal__video {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--green-950);
+    box-shadow: var(--shadow);
 }
 
-.container-title {
-    margin-top: 48px;
-}
-
-.container-parceria {
-    margin-top: 48px;
-}
-
-
-@media (max-width: 780px) {
-    .oil-impact {
-        flex-direction: column;
-        gap: 0;
-        flex-direction: column-reverse;
-    }
-
-    .conscious-disposal {
-        flex-direction: column;
-    }
-
-    .move-container {
-        width: 100%;
-        max-width: 80%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .container-paragraph-oil-impact {
-        width: 100%;
-    }
-
-    .paragraph-oil-impact {
-        font-family: poppins sans-serif;
-        font-weight: 300;
-        font-size: 12px;
-        text-align: start;
-        padding: 0px 16px 0px 16px
-    }
-
-    .container-step h3 {
-        font-size: 14px;
-       }
-
-    .style-step {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        margin-bottom: 0px;
-    }
-
-    .style-step h3 {
-        margin-bottom: 0px;
-    }
-
-    .conscious-disposal {
-        gap: 0;
-    }
-
-    .font-news p {
-        display: flex;
-        margin-left: 16px;
-        justify-content: start;
-        font-size: 12px;
-    }
-
-    .descarte-video {
-        height: auto;
-    }
-
+.disposal__video video {
+    inline-size: 100%;
+    aspect-ratio: 16 / 9;
 }

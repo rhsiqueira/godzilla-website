@@ -1,38 +1,59 @@
 import React from 'react';
-import ComponentTitle from "../components/ComponentTitle";
-import '../styles/Parceiros.css';
+import { Link } from 'react-router-dom';
+import { FaWhatsapp } from 'react-icons/fa';
+import PageHero from '../components/PageHero';
+import { clients, contact } from '../data/site';
+import '../styles/parceiros.css';
 
-
-const Parceiros = () => {
-  return (
+const Parceiros = () => (
     <>
-      <section className='container-parceiros'>
-        <div className='container-title'>
+        <PageHero eyebrow="Parceiros" title="Parcerias de longo prazo e confiança">
+            <p>
+                Conheça algumas empresas parceiras que estão comprometidas com a sustentabilidade e ajudando a
+                reciclar milhares de litros de óleo por mês.
+            </p>
+        </PageHero>
 
-          <ComponentTitle
-            title="PARCEIROS"
-            subtitle="PARCERIAS DE LONGO PRAZO E CONFIANÇA"
-          />
-        </div>
-        <p>Conheça algumas empresas parceiras que estão comprometidas com a sustentabilidade e ajudando a reciclar milhares de litros de óleo por mês</p>
+        <section className="section section--flush-top" aria-label="Empresas parceiras">
+            <div className="container">
+                <ul className="clients">
+                    {clients.map((logo, index) => (
+                        <li key={logo} className="clients__item reveal">
+                            <img src={logo} alt={`Logo de empresa parceira ${index + 1}`} loading="lazy" />
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </section>
 
-        <div className='clientes'>
-          <img src="/cliente-1.svg" alt="Imagem do Impacto do Óleo no meio ambiente" />
-          <img src="/cliente-2.svg" alt="Imagem do Impacto do Óleo no meio ambiente" />
-          <img src="/cliente-3.svg" alt="Imagem do Impacto do Óleo no meio ambiente" />
-          <img src="/cliente-4.svg" alt="Imagem do Impacto do Óleo no meio ambiente" />
-          <img src="/cliente-5.svg" alt="Imagem do Impacto do Óleo no meio ambiente" />
-        </div>
-      </section>
-
-      <section className='fechar-parceria'>
-        <div className='container-parceria'>
-          <h5>Mais de 10 anos de experiência e parceria com nossos clientes!</h5>
-          <p>Estamos prontos para levar o seu negócio a um novo patamar. Se você está inaugurando ou enfrentando desafios na coleta de óleo, oferecemos um atendimento personalizado com soluções únicas e transparentes. Junte-se aos nossos parceiros e descubra as vantagens de trabalhar conosco!</p>
-        </div>
-      </section>
+        <section className="section section--flush-top">
+            <div className="container">
+                <div className="cta-band reveal">
+                    <h2>Mais de 10 anos de experiência e parceria com nossos clientes!</h2>
+                    <p>
+                        Estamos prontos para levar o seu negócio a um novo patamar. Se você está inaugurando ou
+                        enfrentando desafios na coleta de óleo, oferecemos um atendimento personalizado com
+                        soluções únicas e transparentes. Junte-se aos nossos parceiros e descubra as vantagens
+                        de trabalhar conosco!
+                    </p>
+                    <div className="cta-band__actions">
+                        <a
+                            className="btn btn--light"
+                            href={contact.whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaWhatsapp aria-hidden="true" />
+                            Falar no WhatsApp
+                        </a>
+                        <Link to="/fale-conosco" className="btn btn--outline-light">
+                            Outros canais
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
     </>
-  );
-};
+);
 
 export default Parceiros;

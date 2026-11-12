@@ -1,31 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// Importação do Header
-import Header from './components/header';
-import Footer from './components/footer';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import SobreNos from './pages/SobreNos';
+import Parceiros from './pages/Parceiros';
+import FaleConosco from './pages/FaleConosco';
+import NotFound from './pages/NotFound';
 
-// Importação das páginas
-import Home from './pages/home';
-import SobreNos from './pages/sobreNos';
-import Parceiros from './pages/parceiros';
-import FaleConosco from './pages/faleConosco';
-
-const App = () => {
-  return (
-    <Router>
-      {/* Header exibido em todas as páginas */}
-      <Header />
-      {/* Definição das rotas */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre-nos" element={<SobreNos />} />
-        <Route path="/parceiros" element={<Parceiros />} />
-        <Route path="/fale-conosco" element={<FaleConosco />} />
-      </Routes>
-      <Footer />
-    </Router>
-  );
-};
+const App = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route element={<Layout />}>
+                <Route index element={<Home />} />
+                <Route path="sobre-nos" element={<SobreNos />} />
+                <Route path="parceiros" element={<Parceiros />} />
+                <Route path="fale-conosco" element={<FaleConosco />} />
+                <Route path="*" element={<NotFound />} />
+            </Route>
+        </Routes>
+    </BrowserRouter>
+);
 
 export default App;

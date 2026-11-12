@@ -1,206 +1,208 @@
-.header {
+/* ---------- Barra superior ---------- */
+
+.topbar {
+    background: linear-gradient(100deg, var(--green-800) 60%, var(--gold-700) 60%);
+    color: #fff;
+    font-size: var(--text-sm);
+}
+
+.topbar__inner {
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    min-height: 2.5rem;
 }
 
-.header-info {
-    background: rgb(22, 64, 28);
-    background: -moz-linear-gradient(52deg, rgba(22, 64, 28, 1) 56%, rgba(166, 143, 31, 1) 56%);
-    background: -webkit-linear-gradient(52deg, rgba(22, 64, 28, 1) 56%, rgba(166, 143, 31, 1) 56%);
-    background: linear-gradient(52deg, rgba(22, 64, 28, 1) 56%, rgba(166, 143, 31, 1) 56%);
-    display: flex;
-    justify-content: center;
+.topbar__cta {
+    display: inline-flex;
     align-items: center;
-    flex-direction: row;
-    width: 100%;
-    height: 40px;
-    gap: 500px;
-    margin-bottom: 12px;
-}
-
-.info-one {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-size: 100;
-    /* Verifique se não faltou unidade (px) aqui */
-}
-
-.info-two {
-    color: white;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-}
-
-.container-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 64px;
-}
-
-/* Logos */
-.header-logos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    gap: 16px;
-}
-
-/* Nav */
-.header-nav {
-    display: flex;
-    gap: 32px;
-}
-
-/* Estilo dos Links */
-.nav-link {
+    gap: 0.5rem;
+    font-weight: 600;
     text-decoration: none;
-    color: #A68F1F;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    padding: 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
 }
 
-.nav-link.active {
-    background-color: #A68F1F;
-    color: #FFFFFF;
+.topbar__cta:hover {
+    text-decoration: underline;
 }
 
-/* Por padrão, esconde o menu mobile no desktop */
-.mobile-menu-icon,
-.mobile-nav-containe {
+/* ---------- Cabeçalho fixo ---------- */
+
+.site-header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 50;
+    border-block-end: 1px solid var(--border);
+}
+
+/* O fundo translúcido fica em um pseudo-elemento para que o
+   backdrop-filter não prenda o menu mobile (position: fixed). */
+.site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgb(255 255 255 / 0.85);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 4.5rem;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.brand__symbol {
+    inline-size: 3rem;
+    block-size: auto;
+}
+
+.brand__name {
+    inline-size: 5rem;
+    block-size: auto;
+}
+
+/* ---------- Navegação ---------- */
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.site-nav__list {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.site-nav__link {
+    display: block;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--green-800);
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.site-nav__link:hover {
+    background: var(--green-100);
+}
+
+.site-nav__link.active {
+    background: var(--green-800);
+    color: #fff;
+}
+
+.menu-toggle,
+.nav-backdrop {
     display: none;
 }
 
-.mobile-nav-container {
-    display: none;
-}
+/* ---------- Mobile: menu lateral ---------- */
 
-.container-icon-logo {
-    display: none;
-}
+@media (max-width: 860px) {
+    .topbar {
+        background: var(--green-800);
+    }
 
-/* Media Query para telas menores que 781px */
-@media (max-width: 780px) {
+    .topbar__inner {
+        justify-content: center;
+    }
 
-    .header-info,
-    .header-logos,
-    .header-nav {
+    .topbar__tagline {
         display: none;
     }
 
-    .container-header {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 0px;
+    .site-header__inner {
+        min-height: 4rem;
     }
 
-    .mobile-menu-icon {
-        display: block;
-        background: none;
-        border: none;
-        color: #16401C;
-        font-size: 24px;
-        cursor: pointer;
-        margin-left: 16px;
+    .brand__symbol {
+        inline-size: 2.5rem;
     }
 
-    .mobile-nav-container {
-        display: flex;
+    .brand__name {
+        inline-size: 4.25rem;
+    }
+
+    .menu-toggle {
+        position: relative;
+        z-index: 3;
+        display: grid;
+        place-items: center;
+        inline-size: 2.75rem;
+        block-size: 2.75rem;
+        border: 0;
+        border-radius: var(--radius-sm);
+        background: var(--green-100);
+        color: var(--green-800);
+        font-size: 1.25rem;
+    }
+
+    .site-nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 312px;
-        background-color: #A68F1F;
-        ;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        inset-block: 0;
+        inset-inline-end: 0;
+        z-index: 2;
         flex-direction: column;
-        padding-top: 60px;
-        z-index: 999;
+        align-items: stretch;
+        gap: 2rem;
+        inline-size: min(20rem, 85vw);
+        block-size: 100dvh;
+        padding: 5.5rem 1.5rem 2rem;
+        overflow-y: auto;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: transform 0.35s var(--ease), visibility 0.35s;
     }
 
-    .mobile-nav-container.open {
-        transform: translateX(0);
+    .site-nav[data-open='true'] {
+        visibility: visible;
+        transform: none;
     }
 
-    .mobile-nav-container img {
-        width: 115px;
-        height: 68ox;
+    .site-nav__list {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
     }
 
-    .mobile-nav-link {
-        text-decoration: none;
-        color: #16401C;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 700;
-        font-size: 16px;
-        padding: 10px 20px;
-        transition: background-color 0.3s, color 0.3s;
+    .site-nav__link {
+        padding: 0.9rem 1.1rem;
+        border-radius: var(--radius-sm);
+        font-size: 1.05rem;
     }
 
-    .mobile-nav-link.active {
-        background-color: #A68F1F;
-        color: #FFFFFF;
+    .nav-backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        background: rgb(11 36 16 / 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.35s, visibility 0.35s;
     }
 
-    .mobile-info-one {
-        width: 100%;
-        height: 40px;
-        background-color: #16401C;
-    }
-
-    .mobile-info-two {
-        width: 100%;
-        height: 20px;
-        background-color: #A68F1F;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .teste {
-        background-color: #16401C;
-        width: 100%;
-        height: 40px;
-    }
-
-    .container-icon-logo {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        height: 69.13px;
-        background-color: white;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .info-two {
-        color: white;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 300;
-        font-size: 10px;
-    }
-
-    .help {
-        width: 50px;
-        height: 50px;
-        background-color: none;
-    }
-
-    .paragraph-oil-impact {
-        padding: 0px 16px 0px 16px;
+    .nav-backdrop[data-open='true'] {
+        opacity: 1;
+        visibility: visible;
     }
 }

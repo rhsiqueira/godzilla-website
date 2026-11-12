@@ -1,0 +1,371 @@
+/* ==========================================================================
+   Estilos globais: tokens de design, reset, tipografia e utilitários
+   compartilhados por todas as páginas.
+   ========================================================================== */
+
+:root {
+    /* Cores da marca */
+    --green-950: #0b2410;
+    --green-900: #113317;
+    --green-800: #16401c;
+    --green-600: #2b6b34;
+    --green-200: #cdebc9;
+    --green-100: #e7f5e4;
+    --mint: #a5f2a2;
+    --gold-700: #776610;
+    --gold-500: #a68f1f;
+    --gold-300: #d9c45a;
+
+    /* Neutros */
+    --surface: #ffffff;
+    --background: #f6f8f3;
+    --tint: #edf3e8;
+    --text: #1d2a1f;
+    --text-muted: #556357;
+    --border: #dbe4d6;
+
+    /* Tipografia */
+    --font-heading: 'Poppins', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: clamp(1.05rem, 0.98rem + 0.35vw, 1.2rem);
+    --text-xl: clamp(1.25rem, 1.1rem + 0.7vw, 1.6rem);
+    --text-2xl: clamp(1.7rem, 1.3rem + 1.9vw, 2.6rem);
+    --text-3xl: clamp(2rem, 1.4rem + 3vw, 3.4rem);
+
+    /* Espaçamento e forma */
+    --gutter: clamp(1rem, 4vw, 2rem);
+    --section-space: clamp(3rem, 8vw, 6rem);
+    --content-width: 70rem;
+    --radius-sm: 0.5rem;
+    --radius: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-pill: 999px;
+    --shadow-sm: 0 1px 2px rgb(17 51 23 / 0.06), 0 2px 8px rgb(17 51 23 / 0.06);
+    --shadow: 0 2px 4px rgb(17 51 23 / 0.06), 0 12px 32px rgb(17 51 23 / 0.1);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+    color-scheme: light;
+}
+
+/* ---------- Reset ---------- */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+#root {
+    display: contents;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+    margin: 0;
+}
+
+ul,
+ol {
+    padding: 0;
+    list-style: none;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    color: var(--green-800);
+    text-wrap: balance;
+}
+
+p {
+    text-wrap: pretty;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+:focus-visible {
+    outline: 3px solid var(--gold-500);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+}
+
+::selection {
+    background: var(--mint);
+    color: var(--green-950);
+}
+
+/* ---------- Layout ---------- */
+
+.container {
+    width: min(100% - 2 * var(--gutter), var(--content-width));
+    margin-inline: auto;
+}
+
+.page {
+    flex: 1;
+    animation: page-in 0.4s var(--ease) both;
+}
+
+.section {
+    padding-block: var(--section-space);
+}
+
+.section--flush-top {
+    padding-block-start: 0;
+}
+
+.section--tint {
+    background: var(--tint);
+}
+
+.section__lead {
+    max-width: 60ch;
+    margin: 1rem auto 0;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--text-lg);
+}
+
+.lead {
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+}
+
+.skip-link {
+    position: absolute;
+    inset-block-start: 0.5rem;
+    inset-inline-start: 0.5rem;
+    z-index: 100;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius-sm);
+    background: var(--green-800);
+    color: #fff;
+    transform: translateY(-200%);
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+/* ---------- Título de seção ---------- */
+
+.section-title {
+    display: grid;
+    gap: 0.5rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.section-title--start {
+    justify-items: start;
+    text-align: start;
+}
+
+.section-title__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-heading);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-700);
+}
+
+.section-title__eyebrow::before {
+    content: '';
+    inline-size: 1.75rem;
+    block-size: 2px;
+    border-radius: 2px;
+    background: var(--gold-500);
+}
+
+.section-title__heading {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+h1.section-title__heading {
+    font-size: var(--text-3xl);
+}
+
+/* ---------- Cabeçalho das páginas internas ---------- */
+
+.page-hero {
+    padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 5vw, 3.5rem);
+    background: radial-gradient(60rem 22rem at 50% -8rem, var(--green-100), transparent 70%);
+}
+
+.page-hero__inner {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+}
+
+.page-hero__lead {
+    display: grid;
+    justify-items: center;
+    gap: 1.5rem;
+    max-width: 62ch;
+    text-align: center;
+    font-size: var(--text-lg);
+    color: var(--text-muted);
+}
+
+/* ---------- Botões ---------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    min-height: 3rem;
+    padding: 0.7rem 1.4rem;
+    border: 2px solid transparent;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s,
+        transform 0.2s var(--ease);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: none;
+}
+
+.btn--primary {
+    background: var(--green-800);
+    color: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+    background: var(--green-600);
+    box-shadow: var(--shadow);
+}
+
+.btn--ghost {
+    border-color: var(--border);
+    background: var(--surface);
+    color: var(--green-800);
+}
+
+.btn--ghost:hover {
+    border-color: var(--green-800);
+}
+
+.btn--light {
+    background: #fff;
+    color: var(--green-800);
+}
+
+.btn--light:hover {
+    background: var(--mint);
+}
+
+.btn--outline-light {
+    border-color: rgb(255 255 255 / 0.5);
+    color: #fff;
+}
+
+.btn--outline-light:hover {
+    border-color: #fff;
+    background: rgb(255 255 255 / 0.1);
+}
+
+/* ---------- Animações ---------- */
+
+@keyframes page-in {
+    from {
+        opacity: 0;
+        transform: translateY(0.75rem);
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(1.5rem);
+    }
+}
+
+/* Revela os elementos conforme entram na tela, só com CSS
+   (animação guiada pela rolagem), onde o navegador suporta. */
+@media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+        .reveal {
+            animation: reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 40%;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

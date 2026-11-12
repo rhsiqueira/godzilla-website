@@ -1,0 +1,79 @@
+.partnership {
+    padding-block: var(--section-space);
+    background: radial-gradient(40rem 24rem at 0% 0%, rgb(165 242 162 / 0.14), transparent 70%),
+        var(--green-900);
+    color: rgb(255 255 255 / 0.85);
+}
+
+.partnership .section-title__eyebrow {
+    color: var(--gold-300);
+}
+
+.partnership .section-title__eyebrow::before {
+    background: var(--gold-300);
+}
+
+.partnership .section-title__heading {
+    color: #fff;
+}
+
+/* ---------- Abas ---------- */
+
+.partnership__tabs {
+    display: flex;
+    gap: 0.25rem;
+    inline-size: fit-content;
+    max-inline-size: 100%;
+    margin: 1.75rem auto 0;
+    padding: 0.3rem;
+    border-radius: var(--radius-pill);
+    background: rgb(255 255 255 / 0.1);
+}
+
+.partnership__tab {
+    min-height: 2.75rem;
+    padding: 0.5rem 1.25rem;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.partnership__tab:hover {
+    background: rgb(255 255 255 / 0.12);
+}
+
+.partnership__tab[aria-selected='true'] {
+    background: #fff;
+    color: var(--green-800);
+}
+
+/* ---------- Painel ---------- */
+
+.partnership__panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+    gap: clamp(1rem, 3vw, 1.75rem);
+    margin-block-start: clamp(1.75rem, 4vw, 2.75rem);
+    animation: page-in 0.4s var(--ease) both;
+}
+
+.partnership__card {
+    display: grid;
+    align-content: start;
+    gap: 0.6rem;
+    padding: 1.5rem;
+    border: 1px solid rgb(255 255 255 / 0.14);
+    border-block-start: 3px solid var(--gold-300);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.06);
+}
+
+.partnership__card h3 {
+    font-size: var(--text-xl);
+    color: #fff;
+}
