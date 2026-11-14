@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaInstagram, FaPhoneAlt, FaRegEnvelope } from 'react-icons/fa';
-import { company, contact, navigation } from '../data/site';
+import { FaInstagram, FaPhoneAlt, FaRegEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { company, contact, messages, navigation, whatsappLink } from '../data/site';
 import '../styles/footer.css';
 
 const Footer = () => (
@@ -9,39 +8,37 @@ const Footer = () => (
         <div className="container site-footer__grid">
             <div className="site-footer__brand">
                 <img src="/LogoNome.png" alt={company.name} width="100" height="60" />
-                <p>{company.tagline}</p>
+                <p>Coleta e reciclagem de óleo vegetal usado para comércios de food service.</p>
+                <p>{company.coverage}.</p>
             </div>
 
-            <div>
-                <h2 className="site-footer__title">Redes sociais</h2>
-                <p>Siga-nos nas redes sociais!</p>
-                <a
-                    className="site-footer__link"
-                    href={contact.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <FaInstagram aria-hidden="true" />
-                    {contact.instagramLabel}
-                </a>
-            </div>
-
-            <nav aria-label="Mapa do site">
-                <h2 className="site-footer__title">Mapa do site</h2>
+            <nav aria-label="Seções da página">
+                <h2 className="site-footer__title">Navegação</h2>
                 <ul className="site-footer__list">
-                    {navigation.map(({ to, label }) => (
-                        <li key={to}>
-                            <Link to={to} className="site-footer__link">
+                    {navigation.map(({ href, label }) => (
+                        <li key={href}>
+                            <a href={href} className="site-footer__link">
                                 {label}
-                            </Link>
+                            </a>
                         </li>
                     ))}
                 </ul>
             </nav>
 
             <div>
-                <h2 className="site-footer__title">Atendimento</h2>
+                <h2 className="site-footer__title">Canais oficiais</h2>
                 <ul className="site-footer__list">
+                    <li>
+                        <a
+                            className="site-footer__link"
+                            href={whatsappLink(messages.schedule)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaWhatsapp aria-hidden="true" />
+                            {contact.whatsappLabel}
+                        </a>
+                    </li>
                     <li>
                         <a className="site-footer__link" href={contact.phoneUrl}>
                             <FaPhoneAlt aria-hidden="true" />
@@ -52,6 +49,17 @@ const Footer = () => (
                         <a className="site-footer__link" href={contact.emailUrl}>
                             <FaRegEnvelope aria-hidden="true" />
                             {contact.email}
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            className="site-footer__link"
+                            href={contact.instagramUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaInstagram aria-hidden="true" />
+                            {contact.instagramLabel}
                         </a>
                     </li>
                 </ul>

@@ -1,25 +1,44 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import SobreNos from './pages/SobreNos';
-import Parceiros from './pages/Parceiros';
-import FaleConosco from './pages/FaleConosco';
-import NotFound from './pages/NotFound';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import WhatsAppFab from './components/WhatsAppFab';
+import Hero from './sections/Hero';
+import Stats from './sections/Stats';
+import HowItWorks from './sections/HowItWorks';
+import Gourmet from './sections/Gourmet';
+import Payment from './sections/Payment';
+import Documentation from './sections/Documentation';
+import Portal from './sections/Portal';
+import Clients from './sections/Clients';
+import Team from './sections/Team';
+import Disposal from './sections/Disposal';
+import Faq from './sections/Faq';
+import FinalCta from './sections/FinalCta';
 
 const App = () => (
-    <BrowserRouter>
-        <Routes>
-            <Route element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="sobre-nos" element={<SobreNos />} />
-                <Route path="parceiros" element={<Parceiros />} />
-                <Route path="fale-conosco" element={<FaleConosco />} />
-                <Route path="*" element={<NotFound />} />
-            </Route>
-        </Routes>
-    </BrowserRouter>
+    <>
+        <a className="skip-link" href="#conteudo">
+            Pular para o conteúdo
+        </a>
+        <Header />
+        <main id="conteudo">
+            <Hero />
+            <Stats />
+            <HowItWorks />
+            <Gourmet />
+            <Payment />
+            <Documentation />
+            <Portal />
+            <Clients />
+            <Team />
+            <Disposal />
+            <Faq />
+            <FinalCta />
+        </main>
+        <Footer />
+        <WhatsAppFab />
+    </>
 );
 
 export default App;
