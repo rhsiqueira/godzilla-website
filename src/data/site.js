@@ -18,7 +18,7 @@ export const messages = {
 // Endereço público do site, sem barra no final (ex.: 'https://www.exemplo.com.br').
 // Quando preenchido, o build gera link canônico, sitemap.xml e a imagem de
 // prévia com endereço completo. Ver scripts/prerender.js.
-export const siteUrl = '';
+export const siteUrl = 'https://godzillacoletadeoleo.com.br';
 
 // Textos usados nos metadados e nos dados estruturados para buscadores.
 export const seo = {
@@ -41,8 +41,8 @@ export const contact = {
     whatsappLabel: '(11) 94644-7239',
     phoneLabel: '(11) 95758-2806',
     phoneUrl: 'tel:+5511957582806',
-    email: 'contato@godzillacoletadeoleo.com',
-    emailUrl: 'mailto:contato@godzillacoletadeoleo.com',
+    email: 'contato@godzillacoletadeoleo.com.br',
+    emailUrl: 'mailto:contato@godzillacoletadeoleo.com.br',
     instagramLabel: '@godzillacoleta',
     instagramUrl: 'https://www.instagram.com/godzillacoleta?igsh=MXdleTN0enlqN2V4cA==',
 };
