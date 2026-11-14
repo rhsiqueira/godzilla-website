@@ -48,7 +48,7 @@ const Documentation = () => (
                 id="documentacao-titulo"
                 eyebrow="Documentação e destino final"
                 title="Fiscalização em dia, sem papelada."
-                lead="Cada coleta gera um certificado de destinação. Você comprova, a qualquer momento, que o óleo do seu comércio teve o destino correto."
+                lead="Cada coleta gera um certificado de destinação do óleo vegetal usado. Você comprova, a qualquer momento, que o óleo do seu comércio teve o destino correto."
             />
 
             <div className="docs">

@@ -20,7 +20,7 @@ const Hero = () => (
                     Seu óleo de cozinha usado <em>vale dinheiro.</em>
                 </h1>
                 <p className="hero__lead">
-                    Coletamos em até 48h, fornecemos os recipientes e pagamos{' '}
+                    Coleta de óleo de cozinha usado em São Paulo: buscamos em até 48h, fornecemos os recipientes e pagamos{' '}
                     <strong>R$ 4 por litro em crédito</strong>. Com certificado de destinação em toda coleta.
                 </p>
 

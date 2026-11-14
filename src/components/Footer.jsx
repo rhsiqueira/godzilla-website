@@ -8,7 +8,7 @@ const Footer = () => (
         <div className="container site-footer__grid">
             <div className="site-footer__brand">
                 <img src="/LogoNome.png" alt={company.name} width="100" height="60" />
-                <p>Coleta e reciclagem de óleo vegetal usado para comércios de food service.</p>
+                <p>Coleta e reciclagem de óleo de cozinha usado para restaurantes, lanchonetes, padarias e hotéis.</p>
                 <p>{company.coverage}.</p>
             </div>
 

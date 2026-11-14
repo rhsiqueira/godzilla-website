@@ -9,10 +9,27 @@ export const whatsappLink = (message) =>
 
 export const messages = {
     schedule:
-        'Olá! Vim pelo site e quero agendar uma coleta de óleo.\nEmpresa: \nBairro: \nLitros por mês (aprox.): ',
+        'Olá! Vim pelo site e quero agendar uma coleta de óleo.\nEmpresa: \nEndereço: \nLitros por mês (aprox.): ',
     credit: 'Quero saber mais sobre o crédito na Espaço do Gourmet.',
     pix: 'Olá! Vim pelo site e quero negociar o valor do óleo no Pix.\nLitros por mês (aprox.): ',
     portal: 'Olá! Quero acesso antecipado ao Portal do Cliente Godzilla.\nEmpresa: ',
+};
+
+// Endereço público do site, sem barra no final (ex.: 'https://www.exemplo.com.br').
+// Quando preenchido, o build gera link canônico, sitemap.xml e a imagem de
+// prévia com endereço completo. Ver scripts/prerender.js.
+export const siteUrl = '';
+
+// Textos usados nos metadados e nos dados estruturados para buscadores.
+export const seo = {
+    description:
+        'Coleta de óleo de cozinha usado em São Paulo para restaurantes, lanchonetes, padarias e hotéis. Coleta em até 48h, recipientes grátis, R$ 4 por litro em crédito e certificado de destinação.',
+    topics: [
+        'Coleta de óleo de cozinha usado',
+        'Reciclagem de óleo vegetal',
+        'Compra de óleo de fritura usado',
+        'Certificado de destinação de óleo',
+    ],
 };
 
 export const company = {
@@ -38,7 +55,7 @@ export const navigation = [
     { href: '#duvidas', label: 'Dúvidas' },
 ];
 
-export const audiences = ['Restaurantes', 'Lanchonetes', 'Padarias', 'Cozinhas industriais'];
+export const audiences = ['Restaurantes', 'Lanchonetes', 'Padarias', 'Hotéis'];
 
 // Regras comerciais usadas nos textos e no simulador.
 export const credit = {
@@ -59,9 +76,9 @@ export const trackingSteps = [
 
 // `value` numérico ganha animação de contagem; `text` é exibido como está.
 export const stats = [
-    { prefix: '+', value: 10, label: 'anos de mercado' },
+    { prefix: '+', value: 12, label: 'anos de mercado' },
     { prefix: '+', value: 110, label: 'clientes ativos' },
-    { text: '4–5 mil', label: 'litros coletados por mês' },
+    { prefix: '+', value: 6, suffix: ' mil', label: 'litros de óleo por mês' },
     { value: 48, suffix: 'h', label: 'prazo máximo de coleta' },
     { text: 'SP', label: 'capital e interior' },
 ];
@@ -69,7 +86,7 @@ export const stats = [
 export const howItWorks = [
     {
         title: 'Você chama no WhatsApp',
-        text: 'Informe seu bairro e o volume aproximado de óleo que seu comércio gera por mês.',
+        text: 'Informe seu endereço e o volume aproximado de óleo que seu comércio gera por mês.',
     },
     {
         title: 'Entregamos os recipientes',
@@ -184,13 +201,6 @@ export const team = [
     { name: 'Luis Sávio Santos de Siqueira', image: '/funcionario-01.png' },
     { name: 'Luis Sávio Santos de Siqueira Jr', image: '/funcionario-01.png' },
     { name: 'Rodrigo Holanda de Siqueira', image: '/funcionario-01.png' },
-];
-
-export const disposalSteps = [
-    'Deixe o óleo esfriar',
-    'Armazene em uma garrafa PET',
-    'Feche bem a garrafa',
-    'Leve a um ponto de coleta',
 ];
 
 export const faq = [

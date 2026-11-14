@@ -968,65 +968,6 @@ li[data-done='true'] .tracking__dot {
     color: var(--gold-700);
 }
 
-/* ---------- Descarte consciente ---------- */
-
-.disposal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
-    align-items: center;
-    gap: clamp(2rem, 5vw, 4rem);
-}
-
-.disposal .section-title__heading {
-    font-size: var(--text-xl);
-    max-width: 26ch;
-}
-
-.disposal__source {
-    margin-block: 1rem;
-    color: var(--text-muted);
-}
-
-.disposal__source a {
-    color: var(--green-600);
-    font-weight: 600;
-}
-
-.disposal__steps {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-    gap: 0.6rem;
-}
-
-.disposal__steps li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.6rem 0.9rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-    font-weight: 600;
-    color: var(--green-800);
-}
-
-.disposal__steps span {
-    font-family: var(--font-mono);
-    color: var(--gold-700);
-}
-
-.disposal__video {
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-    background: var(--ink);
-    box-shadow: var(--shadow);
-}
-
-.disposal__video video {
-    inline-size: 100%;
-    aspect-ratio: 16 / 9;
-}
-
 /* ---------- Dúvidas frequentes ---------- */
 
 .faq__list {

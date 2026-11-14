@@ -9,8 +9,8 @@ const HowItWorks = () => (
             <SectionTitle
                 id="como-funciona-titulo"
                 eyebrow="Como funciona"
-                title="Do pedido ao pagamento em 4 passos"
-                lead="Você não precisa levar o óleo a lugar nenhum: a Godzilla busca no seu comércio."
+                title="Como funciona a coleta de óleo usado"
+                lead="Do pedido ao pagamento em 4 passos. Você não precisa levar o óleo a lugar nenhum: a Godzilla busca no seu comércio."
             />
 
             <div className="how">

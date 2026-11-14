@@ -12,7 +12,6 @@ import Documentation from './sections/Documentation';
 import Portal from './sections/Portal';
 import Clients from './sections/Clients';
 import Team from './sections/Team';
-import Disposal from './sections/Disposal';
 import Faq from './sections/Faq';
 import FinalCta from './sections/FinalCta';
 
@@ -32,7 +31,6 @@ const App = () => (
             <Portal />
             <Clients />
             <Team />
-            <Disposal />
             <Faq />
             <FinalCta />
         </main>
