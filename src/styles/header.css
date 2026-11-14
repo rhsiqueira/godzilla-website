@@ -1,32 +1,3 @@
-/* ---------- Barra superior ---------- */
-
-.topbar {
-    background: linear-gradient(100deg, var(--green-800) 60%, var(--gold-700) 60%);
-    color: #fff;
-    font-size: var(--text-sm);
-}
-
-.topbar__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 2.5rem;
-}
-
-.topbar__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.topbar__cta:hover {
-    text-decoration: underline;
-}
-
 /* ---------- Cabeçalho fixo ---------- */
 
 .site-header {
@@ -43,7 +14,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: rgb(255 255 255 / 0.85);
+    background: rgb(255 255 255 / 0.88);
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
 }
@@ -53,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
-    min-height: 4.5rem;
+    min-height: 4.25rem;
 }
 
 .brand {
@@ -64,12 +35,12 @@
 }
 
 .brand__symbol {
-    inline-size: 3rem;
+    inline-size: 2.75rem;
     block-size: auto;
 }
 
 .brand__name {
-    inline-size: 5rem;
+    inline-size: 4.5rem;
     block-size: auto;
 }
 
@@ -78,34 +49,34 @@
 .site-nav {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .site-nav__list {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.125rem;
 }
 
 .site-nav__link {
     display: block;
-    padding: 0.6rem 1rem;
+    padding: 0.5rem 0.85rem;
     border-radius: var(--radius-pill);
     font-family: var(--font-heading);
     font-size: 0.95rem;
-    font-weight: 600;
+    font-weight: 500;
     color: var(--green-800);
     text-decoration: none;
-    transition: background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s;
 }
 
 .site-nav__link:hover {
     background: var(--green-100);
 }
 
-.site-nav__link.active {
-    background: var(--green-800);
-    color: #fff;
+.site-nav__cta {
+    min-height: 2.75rem;
+    padding-block: 0.5rem;
 }
 
 .menu-toggle,
@@ -115,29 +86,17 @@
 
 /* ---------- Mobile: menu lateral ---------- */
 
-@media (max-width: 860px) {
-    .topbar {
-        background: var(--green-800);
-    }
-
-    .topbar__inner {
-        justify-content: center;
-    }
-
-    .topbar__tagline {
-        display: none;
-    }
-
+@media (max-width: 960px) {
     .site-header__inner {
-        min-height: 4rem;
+        min-height: 3.75rem;
     }
 
     .brand__symbol {
-        inline-size: 2.5rem;
+        inline-size: 2.4rem;
     }
 
     .brand__name {
-        inline-size: 4.25rem;
+        inline-size: 4rem;
     }
 
     .menu-toggle {
@@ -166,7 +125,7 @@
         block-size: 100dvh;
         padding: 5.5rem 1.5rem 2rem;
         overflow-y: auto;
-        background: var(--surface);
+        background: #fff;
         box-shadow: var(--shadow);
         visibility: hidden;
         transform: translateX(100%);
@@ -195,7 +154,7 @@
         position: fixed;
         inset: 0;
         z-index: 1;
-        background: rgb(11 36 16 / 0.5);
+        background: rgb(7 23 11 / 0.6);
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.35s, visibility 0.35s;
