@@ -18,7 +18,7 @@ export const messages = {
 // Endereço público do site, sem barra no final (ex.: 'https://www.exemplo.com.br').
 // Quando preenchido, o build gera link canônico, sitemap.xml e a imagem de
 // prévia com endereço completo. Ver scripts/prerender.js.
-export const siteUrl = 'https://godzillacoletadeoleo.com.br';
+export const siteUrl = 'https://www.godzillacoletadeoleo.com.br';
 
 // Textos usados nos metadados e nos dados estruturados para buscadores.
 export const seo = {
